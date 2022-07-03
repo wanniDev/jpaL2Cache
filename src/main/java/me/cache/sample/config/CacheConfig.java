@@ -31,8 +31,8 @@ public class CacheConfig {
             ResourcePoolsBuilder.newResourcePoolsBuilder()
                     .heap(10000, EntryUnit.ENTRIES))
             .withSizeOfMaxObjectSize(1000, MemoryUnit.B)
-            .withExpiry(ExpiryPolicyBuilder.timeToIdleExpiration(Duration.ofSeconds(10)))
-            .withExpiry(ExpiryPolicyBuilder.timeToLiveExpiration(Duration.ofSeconds(20))));
+            .withExpiry(ExpiryPolicyBuilder.timeToIdleExpiration(Duration.ofSeconds(300)))
+            .withExpiry(ExpiryPolicyBuilder.timeToLiveExpiration(Duration.ofSeconds(600))));
   }
 
   @Bean

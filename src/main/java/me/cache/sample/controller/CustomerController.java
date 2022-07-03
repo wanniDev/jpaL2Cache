@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -16,6 +17,11 @@ public class CustomerController {
   @GetMapping("/customer/{id}")
   public ResponseEntity<Customer> findCustomer(@PathVariable Long id) {
     return ResponseEntity.ok(customerRepository.findById(id).get());
+  }
+
+  @GetMapping("/customer")
+  public ResponseEntity<List<Customer>> customers() {
+    return ResponseEntity.ok(customerRepository.findAll());
   }
 
   @PostMapping("/customer")
